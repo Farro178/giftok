@@ -41,13 +41,13 @@ export default function RootLayout({
       className="bg-green-custom bg-gradient-to-br from-green-custom to-yellow-custom"
     >
       <body className={inter.className}>
-        <main className=" max-w-7xl mx-auto min-h-dvh min-w-dvw flex flex-col">
+        <main className="min-w-dvw mx-auto flex min-h-dvh max-w-7xl flex-col">
           <nav className="flex items-center justify-center py-4">
             <Link className="text-2xl" href="/">
               GifTok
             </Link>
           </nav>
-          <div className="flex-1 flex flex-col gap-4 items-center">
+          <div className="flex flex-1 flex-col items-center gap-4">
             <Root
               defaultOpen={isDialogOpen}
               onOpenChange={() => {
@@ -61,7 +61,7 @@ export default function RootLayout({
             >
               <SearchInput />
 
-              <div className="flex items-center justify-center h-full flex-auto">
+              <div className="flex h-full flex-auto items-center justify-center">
                 {error ? (
                   <div>Failed to Load</div>
                 ) : isLoading || !data ? (
@@ -73,9 +73,9 @@ export default function RootLayout({
                 )}
               </div>
               <Portal>
-                <Overlay className="fixed inset-0 opacity-70 bg-black" />
+                <Overlay className="fixed inset-0 bg-black opacity-70" />
                 <Content>
-                  <div className="bg-white rounded-lg fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-7xl max-h-[85vh] p-6 animate-fadeInScale">
+                  <div className="fixed left-1/2 top-1/2 max-h-[85vh] w-[90vw] max-w-7xl -translate-x-1/2 -translate-y-1/2 transform animate-fadeInScale rounded-lg bg-white p-6">
                     {children}
                   </div>
                 </Content>

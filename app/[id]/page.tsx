@@ -10,14 +10,14 @@ export default function Page({ params }: { params: { id: string } }) {
 
   const { data, error, isLoading } = useSWR(
     `https://api.giphy.com/v1/gifs/${params.id}?api_key=${apiKey}`,
-    getGifDetailsFetcher
+    getGifDetailsFetcher,
   );
 
   return (
     <>
       <Close asChild>
         <button
-          className="outline-none rounded-full h-8 w-8 inline-flex items-center justify-center absolute top-2 right-2 hover:bg-black hover:text-white"
+          className="absolute right-2 top-2 inline-flex h-8 w-8 items-center justify-center rounded-full outline-none hover:bg-black hover:text-white"
           aria-label="Close"
         >
           <Cross2Icon className="h-6 w-6" />
