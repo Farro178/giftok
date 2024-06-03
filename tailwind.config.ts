@@ -23,9 +23,14 @@ const config: Config = {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        scaleHover: {
+          "0%": { transform: "scale(1)" },
+          "100%": { transform: "scale(1.02)" },
+        },
       },
       animation: {
         fadeInScale: "fadeInScale 0.8s ease-out",
+        "scale-hover": "scaleHover 0.2s ease-in ",
       },
     },
   },

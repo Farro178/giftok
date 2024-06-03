@@ -22,6 +22,7 @@ export function GifMasonry({ data }: GifMasonryProps) {
       }}
       render={(item) => (
         <MotionLink
+          className="scale-110"
           key={item.id}
           href={searchTerm ? `/${item.id}?search=${searchTerm}` : `/${item.id}`}
           initial={{ opacity: 0, scale: 0 }}
@@ -30,7 +31,12 @@ export function GifMasonry({ data }: GifMasonryProps) {
         >
           <Trigger asChild>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className="h-full w-full" src={item.url} alt={item.alt} />
+            <img
+              className="h-full w-full hover:animate-scale-hover"
+              style={{ animationFillMode: "forwards" }}
+              src={item.url}
+              alt={item.alt}
+            />
           </Trigger>
         </MotionLink>
       )}
