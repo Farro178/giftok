@@ -9,6 +9,7 @@ const nextConfig = {
       "media4.giphy.com",
     ],
   },
+  experimental: { missingSuspenseWithCSRBailout: false },
 };
 
 export default nextConfig;
