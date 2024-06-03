@@ -16,9 +16,9 @@ export function GifMasonry({ data }: GifMasonryProps) {
     <Masonry
       items={data}
       config={{
-        columns: [1, 2, 3, 4],
-        gap: [10, 12, 16, 20],
-        media: [480, 640, 1024, 1280],
+        columns: [2, 3, 4],
+        gap: [12, 16, 20],
+        media: [640, 1024, 1280],
       }}
       render={(item) => (
         <MotionLink
